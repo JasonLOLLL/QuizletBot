@@ -57,6 +57,7 @@ function insertModal() {
 }
 
 function matchClick(timeInSeconds, both) {
+    getAnswers();
     localStorage.setItem("matchTime", timeInSeconds < 0 ? minimumMatchTime : timeInSeconds); //store time inside of localStorage (in browser)
 
     localStorage.setItem("both", both);
@@ -66,6 +67,7 @@ function matchClick(timeInSeconds, both) {
 }
 
 function learnClick() {
+    getAnswers();
     const reference = document.getElementsByClassName(homePageButtonClass)[1].href;
     location.href = reference;
 }
